@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const materias = document.querySelectorAll(".materia");
   const creditosAprobadosSpan = document.getElementById("creditos-aprobados");
