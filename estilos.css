@@ -31,7 +31,7 @@ h1 {
 
 .malla {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* cada semestre en una columna */
   gap: 20px;
   overflow-x: auto;
   padding: 10px;
