@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arquitectura Colmayor</title>
+  <link rel="stylesheet" href="estilos.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body data-tema="rosa">
+  <h1>Arquitectura Colmayor</h1>
+  <h2 class="subtitle">Malla Interactiva</h2>
+
+  <div class="color-selector">
+    <button class="color-button color-naranja" onclick="cambiarTema('naranja')"></button>
+    <button class="color-button color-azul" onclick="cambiarTema('azul')"></button>
+    <button class="color-button color-negro" onclick="cambiarTema('negro')"></button>
+    <button class="color-button color-morado" onclick="cambiarTema('morado')"></button>
+    <button class="color-button color-rosa" onclick="cambiarTema('rosa')"></button>
+  </div>
+
+  <div id="info-creditos">
+    Créditos aprobados: <span id="creditos-aprobados">0</span> / <span id="creditos-totales">167</span>
+    <button id="resetear">Resetear</button>
+  </div>
+
+  <div class="malla">
+    <!-- Aquí van todos tus semestres -->    
+  </div>
+
+  <script>
+    function cambiarTema(tema) {
+      document.body.setAttribute('data-tema', tema);
+      localStorage.setItem('temaColor', tema);
+    }
+    const colorGuardado = localStorage.getItem('temaColor');
+    if (colorGuardado) {
+      document.body.setAttribute('data-tema', colorGuardado);
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
