@@ -78,3 +78,18 @@ document.addEventListener("DOMContentLoaded", () => {
   desbloquearDependientes();
   actualizarCreditos();
 });
+// Cambiar color del tema
+const colorPickers = document.querySelectorAll(".color-picker");
+colorPickers.forEach(boton => {
+  boton.addEventListener("click", () => {
+    const color = boton.dataset.color;
+    document.documentElement.style.setProperty('--main-color', color);
+    localStorage.setItem("colorTema", color);
+  });
+});
+
+// Aplicar color guardado al cargar
+const colorGuardado = localStorage.getItem("colorTema");
+if (colorGuardado) {
+  document.documentElement.style.setProperty('--main-color', colorGuardado);
+}
