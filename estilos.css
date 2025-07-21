@@ -1,0 +1,81 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff0f6;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+h1 {
+  text-align: center;
+  color: #d63384;
+  margin-bottom: 10px;
+}
+
+#info-creditos {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+#resetear {
+  margin-left: 20px;
+  padding: 4px 12px;
+  background-color: #faa2c1;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.malla {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.semestre {
+  min-width: 160px;
+  border: 2px solid #f783ac;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #ffe3ec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.semestre h2 {
+  color: #c2255c;
+  margin-bottom: 10px;
+}
+
+.materia {
+  margin: 6px 0;
+  padding: 10px;
+  font-size: 12px;
+  background-color: #f8d7e6;
+  color: #a61e4d;
+  border: 2px solid #f783ac;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+}
+
+.materia.bloqueada {
+  background-color: #f3f0f3;
+  border-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.materia.aprobada {
+  background-color: #eebefa;
+  color: white;
+  border-color: #da77f2;
+}
