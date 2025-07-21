@@ -2,8 +2,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const materias = document.querySelectorAll(".materia");
   const creditosAprobadosSpan = document.getElementById("creditos-aprobados");
   const resetButton = document.getElementById("resetear");
-  const colorButtons = document.querySelectorAll(".color-picker");
+  const colorPickers = document.querySelectorAll(".color-picker");
   const root = document.documentElement;
+
+  const temas = {
+    "#d63384": ["#fff0f6", "#f8d7e6", "#f783ac", "#c2255c"], // rosa
+    "#228be6": ["#e7f5ff", "#d0ebff", "#74c0fc", "#1c7ed6"], // azul
+    "#f76707": ["#fff4e6", "#ffe8cc", "#ffa94d", "#f76707"], // naranja
+    "#9c36b5": ["#f8f0fc", "#eebefa", "#da77f2", "#862e9c"], // morado
+    "#212529": ["#343a40", "#495057", "#868e96", "#f8f9fa"]  // negro
+  };
+
+  function cambiarTema(color) {
+    const [fondo, materia, borde, aprobada] = temas[color];
+    root.style.setProperty("--color-principal", color);
+    root.style.setProperty("--color-fondo", fondo);
+    root.style.setProperty("--color-materia", materia);
+    root.style.setProperty("--color-borde", borde);
+    root.style.setProperty("--color-aprobada", aprobada);
+    localStorage.setItem("tema", color);
+  }
+
+  function cargarTema() {
+    const guardado = localStorage.getItem("tema");
+    if (guardado && temas[guardado]) {
+      cambiarTema(guardado);
+    }
+  }
 
   function cargarEstado() {
     const aprobadas = JSON.parse(localStorage.getItem("materiasAprobadas")) || [];
@@ -59,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     materia.addEventListener("click", () => {
       if (materia.classList.contains("bloqueada")) return;
+
       materia.classList.toggle("aprobada");
       guardarEstado();
       desbloquearDependientes();
@@ -68,32 +94,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   resetButton.addEventListener("click", () => {
     localStorage.removeItem("materiasAprobadas");
-    localStorage.removeItem("temaColor");
-    materias.forEach(m => {
-      m.classList.remove("aprobada");
-    });
+    materias.forEach(m => m.classList.remove("aprobada"));
     desbloquearDependientes();
     actualizarCreditos();
-    location.reload(); // refresca para aplicar el color por defecto
   });
 
-  colorButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const color = btn.dataset.color;
-      root.style.setProperty("--color-principal", color);
-      localStorage.setItem("temaColor", color);
+  colorPickers.forEach(picker => {
+    picker.addEventListener("click", () => {
+      const color = picker.dataset.color;
+      cambiarTema(color);
     });
   });
 
-  function aplicarTemaGuardado() {
-    const color = localStorage.getItem("temaColor");
-    if (color) {
-      root.style.setProperty("--color-principal", color);
-    }
-  }
-
+  cargarTema();
   cargarEstado();
   desbloquearDependientes();
   actualizarCreditos();
-  aplicarTemaGuardado();
 });
