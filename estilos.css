@@ -1,84 +1,48 @@
-/* Variables de color según el tema */
+:root {
+  --main-color: #d63384;
+}
+
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Raleway', sans-serif;
   background-color: #fff0f6;
   color: #333;
   margin: 0;
   padding: 20px;
   overflow-x: auto;
-
-  --main-color: #d63384;
-  --bg-color: #ffe3ec;
-  --border-color: #f783ac;
-  --materia-bg: #f8d7e6;
-  --materia-text: #a61e4d;
-  --reset-bg: #faa2c1;
 }
 
-/* Temas alternativos */
-body[data-tema="naranja"] {
-  --main-color: #ff6f00;
-  --bg-color: #fff3e0;
-  --border-color: #ffa726;
-  --materia-bg: #ffe0b2;
-  --materia-text: #bf360c;
-  --reset-bg: #ff8a65;
-}
-
-body[data-tema="azul"] {
-  --main-color: #007bff;
-  --bg-color: #e7f1ff;
-  --border-color: #64b5f6;
-  --materia-bg: #bbdefb;
-  --materia-text: #0d47a1;
-  --reset-bg: #4dabf5;
-}
-
-body[data-tema="morado"] {
-  --main-color: #6f42c1;
-  --bg-color: #f3e8ff;
-  --border-color: #b39ddb;
-  --materia-bg: #e1bee7;
-  --materia-text: #4a148c;
-  --reset-bg: #ab47bc;
-}
-
-body[data-tema="negro"] {
-  --main-color: #111;
-  --bg-color: #e0e0e0;
-  --border-color: #999;
-  --materia-bg: #ccc;
-  --materia-text: #000;
-  --reset-bg: #444;
-}
-
-/* Título */
 h1 {
   text-align: center;
+  font-size: 2.5em;
   color: var(--main-color);
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 
-h2.subtitle {
-  #colores-tema {
+.subtitle {
   text-align: center;
-  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #a3266d;
+  margin-top: 0;
+  margin-bottom: 30px;
 }
+
+#colores-tema {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
 .color-picker {
   width: 24px;
   height: 24px;
   border-radius: 50%;
   border: none;
-  margin: 0 5px;
   cursor: pointer;
-}
-  text-align: center;
-  color: var(--main-color);
-  margin-top: 0;
-  margin-bottom: 30px;
+  outline: 2px solid white;
+  box-shadow: 0 0 2px #aaa;
 }
 
-/* Créditos y botón */
 #info-creditos {
   text-align: center;
   font-size: 16px;
@@ -87,15 +51,15 @@ h2.subtitle {
 
 #resetear {
   margin-left: 20px;
-  padding: 4px 12px;
-  background-color: var(--reset-bg);
+  padding: 6px 14px;
+  background-color: var(--main-color);
   border: none;
-  color: #fff;
+  color: white;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
 }
 
-/* Malla general */
 .malla {
   display: flex;
   flex-direction: row;
@@ -104,13 +68,12 @@ h2.subtitle {
   padding: 10px;
 }
 
-/* Semestre */
 .semestre {
   min-width: 180px;
-  border: 2px solid var(--border-color);
+  border: 2px solid var(--main-color);
   padding: 10px;
   border-radius: 15px;
-  background-color: var(--bg-color);
+  background-color: #ffe3ec;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -119,24 +82,34 @@ h2.subtitle {
 .semestre h2 {
   color: var(--main-color);
   margin-bottom: 10px;
+  font-size: 1.2em;
+  text-align: center;
 }
 
-/* Materias */
 .materia {
   margin: 6px 0;
   padding: 10px;
   font-size: 12px;
-  background-color: var(--materia-bg);
-  color: var(--materia-text);
-  border: 2px solid var(--border-color);
+  background-color: #f8d7e6;
+  color: #a61e4d;
+  border: 2px solid var(--main-color);
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.2s;
   text-align: center;
   width: 100%;
+  transition: background 0.2s, transform 0.2s;
 }
 
-/* Materia bloqueada */
+.materia:hover {
+  transform: scale(1.02);
+}
+
+.materia.aprobada {
+  background-color: #c3fae8;
+  color: #087f5b;
+  text-decoration: line-through;
+}
+
 .materia.bloqueada {
   background-color: #f3f0f3;
   border-color: #ccc;
