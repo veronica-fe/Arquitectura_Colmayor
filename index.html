@@ -7,11 +7,10 @@
   <link rel="stylesheet" href="estilos.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body data-tema="rosa">
+<body>
   <h1>Arquitectura Colmayor</h1>
   <h2 class="subtitle">Malla Interactiva</h2>
 
-  <!-- Selector de colores -->
   <div id="colores-tema">
     <button class="color-picker" data-color="#d63384" style="background:#d63384"></button>
     <button class="color-picker" data-color="#228be6" style="background:#228be6"></button>
@@ -20,13 +19,11 @@
     <button class="color-picker" data-color="#212529" style="background:#212529"></button>
   </div>
 
-  <!-- Créditos -->
   <div id="info-creditos">
     Créditos aprobados: <span id="creditos-aprobados">0</span> / <span id="creditos-totales">167</span>
     <button id="resetear">Resetear</button>
   </div>
-
-  <!-- Malla de semestres -->
+  
   <div class="malla">
 
     <div class="semestre">
@@ -61,7 +58,7 @@
       <button class="materia" id="ARQA302" data-requiere="ARQA204" data-creditos="2">HISTORIA ARQ. II (2 cr)</button>
       <button class="materia" id="INS103" data-requiere="INS102" data-creditos="1">INGLÉS III (1 cr)</button>
     </div>
- <!-- Semestre IV -->
+
 <div class="semestre">
   <h2>IV Semestre</h2>
   <button class="materia" id="ARQA404" data-requiere="ARQA304" data-creditos="2">ARQ. Y SOSTENIBILIDAD (2 cr)</button>
@@ -72,7 +69,6 @@
   <button class="materia" id="ARQA403" data-creditos="2">ELECTIVA II (2 cr)</button>
 </div>
 
-<!-- Semestre V -->
 <div class="semestre">
   <h2>V Semestre</h2>
   <button class="materia" id="ARQA503" data-creditos="2">BIOCLIMÁTICA (2 cr)</button>
@@ -126,8 +122,6 @@
   <button class="materia" id="ARQA1003" data-creditos="2">SOCIEDAD Y CULTURA (2 cr)</button>
   <button class="materia" id="ARQA1004" data-creditos="2">ELECTIVA VIII (2 cr)</button>
 </div>
-
-  </div>
 
   <script src="script.js"></script>
 </body>
