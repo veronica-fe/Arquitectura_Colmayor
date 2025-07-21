@@ -109,3 +109,17 @@ h2.subtitle {
   color: #999;
   cursor: not-allowed;
 }
+.doble-fila {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.fila {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 20px;
+  overflow-x: auto;
+}
