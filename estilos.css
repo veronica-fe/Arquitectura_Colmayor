@@ -1,3 +1,4 @@
+/* Variables de color según el tema */
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #fff0f6;
@@ -5,14 +6,67 @@ body {
   margin: 0;
   padding: 20px;
   overflow-x: auto;
+
+  --main-color: #d63384;
+  --bg-color: #ffe3ec;
+  --border-color: #f783ac;
+  --materia-bg: #f8d7e6;
+  --materia-text: #a61e4d;
+  --reset-bg: #faa2c1;
 }
 
+/* Temas alternativos */
+body[data-tema="naranja"] {
+  --main-color: #ff6f00;
+  --bg-color: #fff3e0;
+  --border-color: #ffa726;
+  --materia-bg: #ffe0b2;
+  --materia-text: #bf360c;
+  --reset-bg: #ff8a65;
+}
+
+body[data-tema="azul"] {
+  --main-color: #007bff;
+  --bg-color: #e7f1ff;
+  --border-color: #64b5f6;
+  --materia-bg: #bbdefb;
+  --materia-text: #0d47a1;
+  --reset-bg: #4dabf5;
+}
+
+body[data-tema="morado"] {
+  --main-color: #6f42c1;
+  --bg-color: #f3e8ff;
+  --border-color: #b39ddb;
+  --materia-bg: #e1bee7;
+  --materia-text: #4a148c;
+  --reset-bg: #ab47bc;
+}
+
+body[data-tema="negro"] {
+  --main-color: #111;
+  --bg-color: #e0e0e0;
+  --border-color: #999;
+  --materia-bg: #ccc;
+  --materia-text: #000;
+  --reset-bg: #444;
+}
+
+/* Título */
 h1 {
   text-align: center;
-  color: #d63384;
+  color: var(--main-color);
   margin-bottom: 10px;
 }
 
+h2.subtitle {
+  text-align: center;
+  color: var(--main-color);
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+/* Créditos y botón */
 #info-creditos {
   text-align: center;
   font-size: 16px;
@@ -22,44 +76,47 @@ h1 {
 #resetear {
   margin-left: 20px;
   padding: 4px 12px;
-  background-color: #faa2c1;
+  background-color: var(--reset-bg);
   border: none;
   color: #fff;
   border-radius: 6px;
   cursor: pointer;
 }
 
+/* Malla general */
 .malla {
   display: flex;
-  flex-direction: row; /* cada semestre en una columna */
+  flex-direction: row;
   gap: 20px;
   overflow-x: auto;
   padding: 10px;
 }
 
+/* Semestre */
 .semestre {
   min-width: 180px;
-  border: 2px solid #f783ac;
+  border: 2px solid var(--border-color);
   padding: 10px;
   border-radius: 15px;
-  background-color: #ffe3ec;
+  background-color: var(--bg-color);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .semestre h2 {
-  color: #c2255c;
+  color: var(--main-color);
   margin-bottom: 10px;
 }
 
+/* Materias */
 .materia {
   margin: 6px 0;
   padding: 10px;
   font-size: 12px;
-  background-color: #f8d7e6;
-  color: #a61e4d;
-  border: 2px solid #f783ac;
+  background-color: var(--materia-bg);
+  color: var(--materia-text);
+  border: 2px solid var(--border-color);
   border-radius: 8px;
   cursor: pointer;
   transition: 0.2s;
@@ -67,15 +124,10 @@ h1 {
   width: 100%;
 }
 
+/* Materia bloqueada */
 .materia.bloqueada {
   background-color: #f3f0f3;
   border-color: #ccc;
   color: #999;
   cursor: not-allowed;
-}
-
-.materia.aprobada {
-  background-color: #eebefa;
-  color: white;
-  border-color: #da77f2;
 }
