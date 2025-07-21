@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const materias = document.querySelectorAll(".materia");
   const creditosAprobadosSpan = document.getElementById("creditos-aprobados");
   const resetButton = document.getElementById("resetear");
+  const colorButtons = document.querySelectorAll(".color-picker");
+  const root = document.documentElement;
 
   function cargarEstado() {
     const aprobadas = JSON.parse(localStorage.getItem("materiasAprobadas")) || [];
@@ -66,29 +68,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   resetButton.addEventListener("click", () => {
     localStorage.removeItem("materiasAprobadas");
+    localStorage.removeItem("temaColor");
     materias.forEach(m => {
       m.classList.remove("aprobada");
     });
     desbloquearDependientes();
     actualizarCreditos();
+    location.reload(); // refresca para aplicar el color por defecto
   });
 
-  // Color dinámico
-  const colorPickers = document.querySelectorAll(".color-picker");
-  colorPickers.forEach(boton => {
-    boton.addEventListener("click", () => {
-      const color = boton.dataset.color;
-      document.documentElement.style.setProperty('--main-color', color);
-      localStorage.setItem("colorTema", color);
+  colorButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const color = btn.dataset.color;
+      root.style.setProperty("--color-principal", color);
+      localStorage.setItem("temaColor", color);
     });
   });
 
-  const colorGuardado = localStorage.getItem("colorTema");
-  if (colorGuardado) {
-    document.documentElement.style.setProperty('--main-color', colorGuardado);
+  function aplicarTemaGuardado() {
+    const color = localStorage.getItem("temaColor");
+    if (color) {
+      root.style.setProperty("--color-principal", color);
+    }
   }
 
   cargarEstado();
   desbloquearDependientes();
   actualizarCreditos();
+  aplicarTemaGuardado();
 });
