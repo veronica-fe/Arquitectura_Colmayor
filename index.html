@@ -14,52 +14,57 @@
   </div>
   <div class="malla">
 
-    <!-- Semestres (sólo los primeros 5 para mantener tamaño manejable aquí) -->
-    <div class="semestre"><h2>I</h2>
-      <button class="materia" id="ARQA101" data-creditos="2">ANTROPOLOGÍA</button>
-      <button class="materia" id="ARQA104" data-creditos="2">CONSTRUCCIÓN I</button>
-      <button class="materia" id="ARQA103" data-creditos="2">DIBUJO PROYECTUAL</button>
-      <button class="materia" id="ARQA102" data-creditos="6">DISEÑO ARQ. I</button>
-      <button class="materia" id="INS002" data-creditos="2">FORMACIÓN DEMOCRÁTICA</button>
-      <button class="materia" id="INS101" data-creditos="1">INGLÉS I</button>
-      <button class="materia" id="FAI001" data-creditos="3">MATEMÁTICAS</button>
+    <!-- Semestres en columnas verticales -->
+    <div class="semestre">
+      <h2>I Semestre</h2>
+      <button class="materia" id="ARQA101" data-creditos="2">ANTROPOLOGÍA (2 cr)</button>
+      <button class="materia" id="ARQA104" data-creditos="2">CONSTRUCCIÓN I (2 cr)</button>
+      <button class="materia" id="ARQA103" data-creditos="2">DIBUJO PROYECTUAL (2 cr)</button>
+      <button class="materia" id="ARQA102" data-creditos="6">DISEÑO ARQ. I (6 cr)</button>
+      <button class="materia" id="INS002" data-creditos="2">FORMACIÓN DEMOCRÁTICA (2 cr)</button>
+      <button class="materia" id="INS101" data-creditos="1">INGLÉS I (1 cr)</button>
+      <button class="materia" id="FAI001" data-creditos="3">MATEMÁTICAS (3 cr)</button>
     </div>
 
-    <div class="semestre"><h2>II</h2>
-      <button class="materia" id="ARQA205" data-requiere="ARQA104" data-creditos="2">CONSTRUCCIÓN II</button>
-      <button class="materia" id="ARQA201" data-requiere="ARQA102" data-creditos="6">DISEÑO ARQ. II</button>
-      <button class="materia" id="ARQA203" data-creditos="2">GEOMETRÍA DESCRIPTIVA</button>
-      <button class="materia" id="ARQA204" data-creditos="2">HISTORIA ARQ. I</button>
-      <button class="materia" id="INS102" data-requiere="INS101" data-creditos="1">INGLÉS II</button>
-      <button class="materia" id="ARQA206" data-creditos="2">MODELACIÓN</button>
-      <button class="materia" id="ARQA202" data-creditos="2">ELECTIVA I</button>
+    <div class="semestre">
+      <h2>II Semestre</h2>
+      <button class="materia" id="ARQA205" data-requiere="ARQA104" data-creditos="2">CONSTRUCCIÓN II (2 cr)</button>
+      <button class="materia" id="ARQA201" data-requiere="ARQA102" data-creditos="6">DISEÑO ARQ. II (6 cr)</button>
+      <button class="materia" id="ARQA203" data-creditos="2">GEOMETRÍA DESCRIPTIVA (2 cr)</button>
+      <button class="materia" id="ARQA204" data-creditos="2">HISTORIA ARQ. I (2 cr)</button>
+      <button class="materia" id="INS102" data-requiere="INS101" data-creditos="1">INGLÉS II (1 cr)</button>
+      <button class="materia" id="ARQA206" data-creditos="2">MODELACIÓN (2 cr)</button>
+      <button class="materia" id="ARQA202" data-creditos="2">ELECTIVA I (2 cr)</button>
     </div>
 
-    <div class="semestre"><h2>III</h2>
-      <button class="materia" id="ARQA303" data-requiere="ARQA205" data-creditos="2">CONSTRUCCIÓN III</button>
-      <button class="materia" id="ARQA305" data-requiere="ARQA203" data-creditos="3">DIBUJO ARQ.</button>
-      <button class="materia" id="ARQA301" data-requiere="ARQA201" data-creditos="6">DISEÑO ARQ. III</button>
-      <button class="materia" id="ARQA304" data-creditos="2">ECOLOGÍA URBANA</button>
-      <button class="materia" id="ARQA302" data-requiere="ARQA204" data-creditos="2">HISTORIA ARQ. II</button>
-      <button class="materia" id="INS103" data-requiere="INS102" data-creditos="1">INGLÉS III</button>
+    <div class="semestre">
+      <h2>III Semestre</h2>
+      <button class="materia" id="ARQA303" data-requiere="ARQA205" data-creditos="2">CONSTRUCCIÓN III (2 cr)</button>
+      <button class="materia" id="ARQA305" data-requiere="ARQA203" data-creditos="3">DIBUJO ARQ. (3 cr)</button>
+      <button class="materia" id="ARQA301" data-requiere="ARQA201" data-creditos="6">DISEÑO ARQ. III (6 cr)</button>
+      <button class="materia" id="ARQA304" data-creditos="2">ECOLOGÍA URBANA (2 cr)</button>
+      <button class="materia" id="ARQA302" data-requiere="ARQA204" data-creditos="2">HISTORIA ARQ. II (2 cr)</button>
+      <button class="materia" id="INS103" data-requiere="INS102" data-creditos="1">INGLÉS III (1 cr)</button>
     </div>
 
-    <div class="semestre"><h2>IV</h2>
-      <button class="materia" id="ARQA404" data-requiere="ARQA304" data-creditos="2">ARQ. Y SOSTENIBILIDAD</button>
-      <button class="materia" id="ARQA402" data-requiere="ARQA301" data-creditos="6">DISEÑO ARQ. IV</button>
-      <button class="materia" id="INS104" data-requiere="INS103" data-creditos="1">INGLÉS IV</button>
-      <button class="materia" id="ARQA401" data-creditos="3">REP. DIGITAL I</button>
-      <button class="materia" id="ARQA405" data-creditos="2">TEORÍA ARQ. I</button>
-      <button class="materia" id="ARQA403" data-creditos="2">ELECTIVA II</button>
+    <div class="semestre">
+      <h2>IV Semestre</h2>
+      <button class="materia" id="ARQA404" data-requiere="ARQA304" data-creditos="2">ARQ. Y SOSTENIBILIDAD (2 cr)</button>
+      <button class="materia" id="ARQA402" data-requiere="ARQA301" data-creditos="6">DISEÑO ARQ. IV (6 cr)</button>
+      <button class="materia" id="INS104" data-requiere="INS103" data-creditos="1">INGLÉS IV (1 cr)</button>
+      <button class="materia" id="ARQA401" data-creditos="3">REP. DIGITAL I (3 cr)</button>
+      <button class="materia" id="ARQA405" data-creditos="2">TEORÍA ARQ. I (2 cr)</button>
+      <button class="materia" id="ARQA403" data-creditos="2">ELECTIVA II (2 cr)</button>
     </div>
 
-    <div class="semestre"><h2>V</h2>
-      <button class="materia" id="ARQA503" data-creditos="2">BIOCLIMÁTICA</button>
-      <button class="materia" id="ARQA505" data-requiere="FAI001 ARQA401" data-creditos="3">CONSTRUCCIÓN IV</button>
-      <button class="materia" id="ARQA502" data-requiere="ARQA402" data-creditos="6">DISEÑO ARQ. V</button>
-      <button class="materia" id="ARQA501" data-requiere="ARQA401" data-creditos="3">REP. DIGITAL II</button>
-      <button class="materia" id="ARQA504" data-requiere="ARQA405" data-creditos="2">TEORÍA ARQ. II</button>
-      <button class="materia" id="ARQA506" data-creditos="2">ELECTIVA III</button>
+    <div class="semestre">
+      <h2>V Semestre</h2>
+      <button class="materia" id="ARQA503" data-creditos="2">BIOCLIMÁTICA (2 cr)</button>
+      <button class="materia" id="ARQA505" data-requiere="FAI001 ARQA401" data-creditos="3">CONSTRUCCIÓN IV (3 cr)</button>
+      <button class="materia" id="ARQA502" data-requiere="ARQA402" data-creditos="6">DISEÑO ARQ. V (6 cr)</button>
+      <button class="materia" id="ARQA501" data-requiere="ARQA401" data-creditos="3">REP. DIGITAL II (3 cr)</button>
+      <button class="materia" id="ARQA504" data-requiere="ARQA405" data-creditos="2">TEORÍA ARQ. II (2 cr)</button>
+      <button class="materia" id="ARQA506" data-creditos="2">ELECTIVA III (2 cr)</button>
     </div>
 
   </div>
