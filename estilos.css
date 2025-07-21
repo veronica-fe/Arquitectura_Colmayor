@@ -60,6 +60,18 @@ h1 {
 }
 
 h2.subtitle {
+  #colores-tema {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.color-picker {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  margin: 0 5px;
+  cursor: pointer;
+}
   text-align: center;
   color: var(--main-color);
   margin-top: 0;
