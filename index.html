@@ -7,10 +7,11 @@
   <link rel="stylesheet" href="estilos.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-tema="rosa">
   <h1>Arquitectura Colmayor</h1>
   <h2 class="subtitle">Malla Interactiva</h2>
 
+  <!-- Selector de colores -->
   <div id="colores-tema">
     <button class="color-picker" data-color="#d63384" style="background:#d63384"></button>
     <button class="color-picker" data-color="#228be6" style="background:#228be6"></button>
@@ -19,111 +20,123 @@
     <button class="color-picker" data-color="#212529" style="background:#212529"></button>
   </div>
 
+  <!-- Créditos -->
   <div id="info-creditos">
     Créditos aprobados: <span id="creditos-aprobados">0</span> / <span id="creditos-totales">167</span>
     <button id="resetear">Resetear</button>
   </div>
-  
+
+  <!-- Malla en dos filas -->
   <div class="malla doble-fila">
 
-    <div class="semestre">
-      <h2>I Semestre</h2>
-      <button class="materia" id="ARQA101" data-creditos="2">ANTROPOLOGÍA (2 cr)</button>
-      <button class="materia" id="ARQA104" data-creditos="2">CONSTRUCCIÓN I (2 cr)</button>
-      <button class="materia" id="ARQA103" data-creditos="2">DIBUJO PROYECTUAL (2 cr)</button>
-      <button class="materia" id="ARQA102" data-creditos="6">DISEÑO ARQ. I (6 cr)</button>
-      <button class="materia" id="INS002" data-creditos="2">FORMACIÓN DEMOCRÁTICA (2 cr)</button>
-      <button class="materia" id="INS101" data-creditos="1">INGLÉS I (1 cr)</button>
-      <button class="materia" id="FAI001" data-creditos="3">MATEMÁTICAS (3 cr)</button>
+    <!-- Fila superior: Semestres I a V -->
+    <div class="fila fila-superior">
+
+      <div class="semestre">
+        <h2>I Semestre</h2>
+        <button class="materia" id="ARQA101" data-creditos="2">ANTROPOLOGÍA (2 cr)</button>
+        <button class="materia" id="ARQA104" data-creditos="2">CONSTRUCCIÓN I (2 cr)</button>
+        <button class="materia" id="ARQA103" data-creditos="2">DIBUJO PROYECTUAL (2 cr)</button>
+        <button class="materia" id="ARQA102" data-creditos="6">DISEÑO ARQ. I (6 cr)</button>
+        <button class="materia" id="INS002" data-creditos="2">FORMACIÓN DEMOCRÁTICA (2 cr)</button>
+        <button class="materia" id="INS101" data-creditos="1">INGLÉS I (1 cr)</button>
+        <button class="materia" id="FAI001" data-creditos="3">MATEMÁTICAS (3 cr)</button>
+      </div>
+
+      <div class="semestre">
+        <h2>II Semestre</h2>
+        <button class="materia" id="ARQA205" data-requiere="ARQA104" data-creditos="2">CONSTRUCCIÓN II (2 cr)</button>
+        <button class="materia" id="ARQA201" data-requiere="ARQA102" data-creditos="6">DISEÑO ARQ. II (6 cr)</button>
+        <button class="materia" id="ARQA203" data-creditos="2">GEOMETRÍA DESCRIPTIVA (2 cr)</button>
+        <button class="materia" id="ARQA204" data-creditos="2">HISTORIA ARQ. I (2 cr)</button>
+        <button class="materia" id="INS102" data-requiere="INS101" data-creditos="1">INGLÉS II (1 cr)</button>
+        <button class="materia" id="ARQA206" data-creditos="2">MODELACIÓN (2 cr)</button>
+        <button class="materia" id="ARQA202" data-creditos="2">ELECTIVA I (2 cr)</button>
+      </div>
+
+      <div class="semestre">
+        <h2>III Semestre</h2>
+        <button class="materia" id="ARQA303" data-requiere="ARQA205" data-creditos="2">CONSTRUCCIÓN III (2 cr)</button>
+        <button class="materia" id="ARQA305" data-requiere="ARQA203" data-creditos="3">DIBUJO ARQ. (3 cr)</button>
+        <button class="materia" id="ARQA301" data-requiere="ARQA201" data-creditos="6">DISEÑO ARQ. III (6 cr)</button>
+        <button class="materia" id="ARQA304" data-creditos="2">ECOLOGÍA URBANA (2 cr)</button>
+        <button class="materia" id="ARQA302" data-requiere="ARQA204" data-creditos="2">HISTORIA ARQ. II (2 cr)</button>
+        <button class="materia" id="INS103" data-requiere="INS102" data-creditos="1">INGLÉS III (1 cr)</button>
+      </div>
+
+      <div class="semestre">
+        <h2>IV Semestre</h2>
+        <button class="materia" id="ARQA404" data-requiere="ARQA304" data-creditos="2">ARQ. Y SOSTENIBILIDAD (2 cr)</button>
+        <button class="materia" id="ARQA402" data-requiere="ARQA301" data-creditos="6">DISEÑO ARQ. IV (6 cr)</button>
+        <button class="materia" id="INS104" data-requiere="INS103" data-creditos="1">INGLÉS IV (1 cr)</button>
+        <button class="materia" id="ARQA401" data-creditos="3">REP. DIGITAL I (3 cr)</button>
+        <button class="materia" id="ARQA405" data-creditos="2">TEORÍA ARQ. I (2 cr)</button>
+        <button class="materia" id="ARQA403" data-creditos="2">ELECTIVA II (2 cr)</button>
+      </div>
+
+      <div class="semestre">
+        <h2>V Semestre</h2>
+        <button class="materia" id="ARQA503" data-creditos="2">BIOCLIMÁTICA (2 cr)</button>
+        <button class="materia" id="ARQA505" data-requiere="FAI001 ARQA401" data-creditos="3">CONSTRUCCIÓN IV (3 cr)</button>
+        <button class="materia" id="ARQA502" data-requiere="ARQA402" data-creditos="6">DISEÑO ARQ. V (6 cr)</button>
+        <button class="materia" id="ARQA501" data-requiere="ARQA401" data-creditos="3">REP. DIGITAL II (3 cr)</button>
+        <button class="materia" id="ARQA504" data-requiere="ARQA405" data-creditos="2">TEORÍA ARQ. II (2 cr)</button>
+        <button class="materia" id="ARQA506" data-creditos="2">ELECTIVA III (2 cr)</button>
+      </div>
+
     </div>
 
+    <!-- Fila inferior: Semestres VI a X -->
+    <div class="fila fila-inferior">
 
-    <div class="semestre">
-      <h2>II Semestre</h2>
-      <button class="materia" id="ARQA205" data-requiere="ARQA104" data-creditos="2">CONSTRUCCIÓN II (2 cr)</button>
-      <button class="materia" id="ARQA201" data-requiere="ARQA102" data-creditos="6">DISEÑO ARQ. II (6 cr)</button>
-      <button class="materia" id="ARQA203" data-creditos="2">GEOMETRÍA DESCRIPTIVA (2 cr)</button>
-      <button class="materia" id="ARQA204" data-creditos="2">HISTORIA ARQ. I (2 cr)</button>
-      <button class="materia" id="INS102" data-requiere="INS101" data-creditos="1">INGLÉS II (1 cr)</button>
-      <button class="materia" id="ARQA206" data-creditos="2">MODELACIÓN (2 cr)</button>
-      <button class="materia" id="ARQA202" data-creditos="2">ELECTIVA I (2 cr)</button>
+      <div class="semestre">
+        <h2>VI Semestre</h2>
+        <button class="materia" id="ARQA603" data-requiere="ARQA505" data-creditos="3">CONSTRUCCIÓN V (3 cr)</button>
+        <button class="materia" id="ARQA604" data-creditos="2">PROYECTO URBANO (2 cr)</button>
+        <button class="materia" id="ARQA602" data-requiere="ARQA502" data-creditos="6">DISEÑO ARQ. VI (6 cr)</button>
+        <button class="materia" id="ARQA605" data-requiere="ARQA504" data-creditos="2">TEORÍA ARQ. III (2 cr)</button>
+        <button class="materia" id="ARQA606" data-creditos="2">ELECTIVA IV (2 cr)</button>
+      </div>
+
+      <div class="semestre">
+        <h2>VII Semestre</h2>
+        <button class="materia" id="ARQA703" data-creditos="2">INTERVENCIÓN EN PATRIMONIO (2 cr)</button>
+        <button class="materia" id="ARQA702" data-requiere="ARQA602" data-creditos="6">DISEÑO ARQ. VII (6 cr)</button>
+        <button class="materia" id="ARQA704" data-creditos="2">ARQUITECTURA DEL TERRITORIO (2 cr)</button>
+        <button class="materia" id="ARQA705" data-requiere="ARQA605" data-creditos="2">TEORÍA ARQ. IV (2 cr)</button>
+        <button class="materia" id="ARQA706" data-creditos="2">ELECTIVA V (2 cr)</button>
+      </div>
+
+      <div class="semestre">
+        <h2>VIII Semestre</h2>
+        <button class="materia" id="ARQA802" data-requiere="ARQA702" data-creditos="6">DISEÑO ARQ. VIII (6 cr)</button>
+        <button class="materia" id="ARQA803" data-creditos="2">PLANIFICACIÓN TERRITORIAL (2 cr)</button>
+        <button class="materia" id="ARQA804" data-creditos="2">URBANISMO (2 cr)</button>
+        <button class="materia" id="ARQA801" data-creditos="3">REP. DIGITAL III (3 cr)</button>
+        <button class="materia" id="ARQA805" data-creditos="2">ELECTIVA VI (2 cr)</button>
+      </div>
+
+      <div class="semestre">
+        <h2>IX Semestre</h2>
+        <button class="materia" id="ARQA902" data-requiere="ARQA802" data-creditos="6">DISEÑO ARQ. IX (6 cr)</button>
+        <button class="materia" id="ARQA901" data-creditos="2">GESTIÓN DE PROYECTOS (2 cr)</button>
+        <button class="materia" id="ARQA903" data-creditos="2">FORMULACIÓN DE PROYECTOS (2 cr)</button>
+        <button class="materia" id="ARQA904" data-creditos="2">PRÁCTICA (2 cr)</button>
+        <button class="materia" id="ARQA905" data-creditos="2">ELECTIVA VII (2 cr)</button>
+      </div>
+
+      <div class="semestre">
+        <h2>X Semestre</h2>
+        <button class="materia" id="ARQA1001" data-requiere="ARQA902" data-creditos="10">TRABAJO DE GRADO (10 cr)</button>
+        <button class="materia" id="ARQA1002" data-creditos="2">ÉTICA PROFESIONAL (2 cr)</button>
+        <button class="materia" id="ARQA1003" data-creditos="2">SOCIEDAD Y CULTURA (2 cr)</button>
+        <button class="materia" id="ARQA1004" data-creditos="2">ELECTIVA VIII (2 cr)</button>
+      </div>
+
     </div>
-
-    <div class="semestre">
-      <h2>III Semestre</h2>
-      <button class="materia" id="ARQA303" data-requiere="ARQA205" data-creditos="2">CONSTRUCCIÓN III (2 cr)</button>
-      <button class="materia" id="ARQA305" data-requiere="ARQA203" data-creditos="3">DIBUJO ARQ. (3 cr)</button>
-      <button class="materia" id="ARQA301" data-requiere="ARQA201" data-creditos="6">DISEÑO ARQ. III (6 cr)</button>
-      <button class="materia" id="ARQA304" data-creditos="2">ECOLOGÍA URBANA (2 cr)</button>
-      <button class="materia" id="ARQA302" data-requiere="ARQA204" data-creditos="2">HISTORIA ARQ. II (2 cr)</button>
-      <button class="materia" id="INS103" data-requiere="INS102" data-creditos="1">INGLÉS III (1 cr)</button>
-    </div>
-
-<div class="semestre">
-  <h2>IV Semestre</h2>
-  <button class="materia" id="ARQA404" data-requiere="ARQA304" data-creditos="2">ARQ. Y SOSTENIBILIDAD (2 cr)</button>
-  <button class="materia" id="ARQA402" data-requiere="ARQA301" data-creditos="6">DISEÑO ARQ. IV (6 cr)</button>
-  <button class="materia" id="INS104" data-requiere="INS103" data-creditos="1">INGLÉS IV (1 cr)</button>
-  <button class="materia" id="ARQA401" data-creditos="3">REP. DIGITAL I (3 cr)</button>
-  <button class="materia" id="ARQA405" data-creditos="2">TEORÍA ARQ. I (2 cr)</button>
-  <button class="materia" id="ARQA403" data-creditos="2">ELECTIVA II (2 cr)</button>
-</div>
-
-<div class="semestre">
-  <h2>V Semestre</h2>
-  <button class="materia" id="ARQA503" data-creditos="2">BIOCLIMÁTICA (2 cr)</button>
-  <button class="materia" id="ARQA505" data-requiere="FAI001 ARQA401" data-creditos="3">CONSTRUCCIÓN IV (3 cr)</button>
-  <button class="materia" id="ARQA502" data-requiere="ARQA402" data-creditos="6">DISEÑO ARQ. V (6 cr)</button>
-  <button class="materia" id="ARQA501" data-requiere="ARQA401" data-creditos="3">REP. DIGITAL II (3 cr)</button>
-  <button class="materia" id="ARQA504" data-requiere="ARQA405" data-creditos="2">TEORÍA ARQ. II (2 cr)</button>
-  <button class="materia" id="ARQA506" data-creditos="2">ELECTIVA III (2 cr)</button>
-</div>
-    
-<div class="fila fila-inferior">
-  <div class="semestre">
-  <h2>VI Semestre</h2>
-  <button class="materia" id="ARQA603" data-requiere="ARQA505" data-creditos="3">CONSTRUCCIÓN V (3 cr)</button>
-  <button class="materia" id="ARQA604" data-creditos="2">PROYECTO URBANO (2 cr)</button>
-  <button class="materia" id="ARQA602" data-requiere="ARQA502" data-creditos="6">DISEÑO ARQ. VI (6 cr)</button>
-  <button class="materia" id="ARQA605" data-requiere="ARQA504" data-creditos="2">TEORÍA ARQ. III (2 cr)</button>
-  <button class="materia" id="ARQA606" data-creditos="2">ELECTIVA IV (2 cr)</button>
-</div>
-
-<div class="semestre">
-  <h2>VII Semestre</h2>
-  <button class="materia" id="ARQA703" data-creditos="2">INTERVENCIÓN EN PATRIMONIO (2 cr)</button>
-  <button class="materia" id="ARQA702" data-requiere="ARQA602" data-creditos="6">DISEÑO ARQ. VII (6 cr)</button>
-  <button class="materia" id="ARQA704" data-creditos="2">ARQUITECTURA DEL TERRITORIO (2 cr)</button>
-  <button class="materia" id="ARQA705" data-requiere="ARQA605" data-creditos="2">TEORÍA ARQ. IV (2 cr)</button>
-  <button class="materia" id="ARQA706" data-creditos="2">ELECTIVA V (2 cr)</button>
-</div>
-
-<div class="semestre">
-  <h2>VIII Semestre</h2>
-  <button class="materia" id="ARQA802" data-requiere="ARQA702" data-creditos="6">DISEÑO ARQ. VIII (6 cr)</button>
-  <button class="materia" id="ARQA803" data-creditos="2">PLANIFICACIÓN TERRITORIAL (2 cr)</button>
-  <button class="materia" id="ARQA804" data-creditos="2">URBANISMO (2 cr)</button>
-  <button class="materia" id="ARQA801" data-creditos="3">REP. DIGITAL III (3 cr)</button>
-  <button class="materia" id="ARQA805" data-creditos="2">ELECTIVA VI (2 cr)</button>
-</div>
-
-<div class="semestre">
-  <h2>IX Semestre</h2>
-  <button class="materia" id="ARQA902" data-requiere="ARQA802" data-creditos="6">DISEÑO ARQ. IX (6 cr)</button>
-  <button class="materia" id="ARQA901" data-creditos="2">GESTIÓN DE PROYECTOS (2 cr)</button>
-  <button class="materia" id="ARQA903" data-creditos="2">FORMULACIÓN DE PROYECTOS (2 cr)</button>
-  <button class="materia" id="ARQA904" data-creditos="2">PRÁCTICA (2 cr)</button>
-  <button class="materia" id="ARQA905" data-creditos="2">ELECTIVA VII (2 cr)</button>
-</div>
-
-<div class="semestre">
-  <h2>X Semestre</h2>
-  <button class="materia" id="ARQA1001" data-requiere="ARQA902" data-creditos="10">TRABAJO DE GRADO (10 cr)</button>
-  <button class="materia" id="ARQA1002" data-creditos="2">ÉTICA PROFESIONAL (2 cr)</button>
-  <button class="materia" id="ARQA1003" data-creditos="2">SOCIEDAD Y CULTURA (2 cr)</button>
-  <button class="materia" id="ARQA1004" data-creditos="2">ELECTIVA VIII (2 cr)</button>
-</div>
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
