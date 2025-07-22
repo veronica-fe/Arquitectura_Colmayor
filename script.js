@@ -62,13 +62,13 @@ document.addEventListener("DOMContentLoaded", () => {
     actualizarCreditos();
   });
 
-  colorButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const tema = btn.dataset.tema;
-      localStorage.setItem("temaColor", tema);
-      body.setAttribute("data-tema", tema);
-    });
+ colorButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const tema = btn.dataset.tema;
+    localStorage.setItem("temaColor", tema);
+    body.setAttribute("data-tema", tema);
   });
+});
 
   const savedTema = localStorage.getItem("temaColor");
   if (savedTema) body.setAttribute("data-tema", savedTema);
