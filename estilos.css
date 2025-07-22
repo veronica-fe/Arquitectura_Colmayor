@@ -140,4 +140,13 @@ body[data-tema='negro'] {
   --texto: #ffffff;
   --titulo: #f1f3f5;
 }
+#firma-vero {
+  text-align: center;
+  margin-top: 40px;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--titulo);
+  opacity: 0.8;
+}
 
