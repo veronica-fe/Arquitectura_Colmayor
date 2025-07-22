@@ -30,17 +30,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function desbloquearMaterias() {
-    materias.forEach(materia => {
-      const requisitos = materia.dataset.requiere?.split(" ") || [];
-      const cumplidos = requisitos.every(reqId => {
-        const reqMateria = document.getElementById(reqId);
-        return reqMateria && reqMateria.classList.contains("aprobada");
+    materias.forEach(m => {
+      const reqs = m.dataset.requiere?.split(" ") || [];
+      const ok = reqs.every(id => {
+        const r = document.getElementById(id);
+        return r && r.classList.contains("aprobada");
       });
-
-      if (requisitos.length === 0 || cumplidos) {
-        materia.classList.remove("bloqueada");
+      if (reqs.length && !ok) {
+        m.classList.add("bloqueada");
       } else {
-        materia.classList.add("bloqueada");
+        m.classList.remove("bloqueada");
       }
     });
   }
@@ -62,18 +61,22 @@ document.addEventListener("DOMContentLoaded", () => {
     actualizarCreditos();
   });
 
- colorButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const tema = btn.dataset.tema;
-    localStorage.setItem("temaColor", tema);
-    body.setAttribute("data-tema", tema);
+  colorButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const tema = btn.dataset.tema;
+      localStorage.setItem("temaColor", tema);
+      body.setAttribute("data-tema", tema);
+    });
   });
+
+  const savedTema = localStorage.getItem("temaColor");
+  if (savedTema) body.setAttribute("data-tema", savedTema);
+
+  cargarEstado();
+  desbloquearMaterias();
+  actualizarCreditos();
 });
 
-const savedTema = localStorage.getItem("temaColor");
-if (savedTema) {
-  body.setAttribute("data-tema", savedTema);
-}
 
   cargarEstado();
   desbloquearMaterias();
