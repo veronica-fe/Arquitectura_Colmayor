@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 20px;
   transition: background 0.3s ease, color 0.3s ease;
+  color: var(--texto);
 }
 h1, h2.subtitle {
   text-align: center;
