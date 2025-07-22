@@ -75,10 +75,3 @@ body.setAttribute("data-tema", savedTema);
   desbloquearMaterias();
   actualizarCreditos();
 });
-
-
-  cargarEstado();
-  desbloquearMaterias();
-  actualizarCreditos();
-});
-
