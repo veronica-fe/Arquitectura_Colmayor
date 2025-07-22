@@ -101,3 +101,9 @@ h1, h2.subtitle {
   --materia-aprobada-bg: #212529;
   --btn-bg: #212529;
 }
+.materia.bloqueada {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #ccc;
+  border-style: dashed;
+}
