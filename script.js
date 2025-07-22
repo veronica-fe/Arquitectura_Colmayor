@@ -69,9 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const savedTema = localStorage.getItem("temaColor");
-  if (savedTema) body.setAttribute("data-tema", savedTema);
-
+  const savedTema = localStorage.getItem("temaColor") || "rosa";
+body.setAttribute("data-tema", savedTema);
   cargarEstado();
   desbloquearMaterias();
   actualizarCreditos();
