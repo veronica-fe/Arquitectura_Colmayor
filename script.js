@@ -13,7 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function guardarEstado() {
-    const aprobadas = Array.from(materias).filter(m => m.classList.contains("aprobada")).map(m => m.id);
+    const aprobadas = Array.from(materias)
+      .filter(m => m.classList.contains("aprobada"))
+      .map(m => m.id);
     localStorage.setItem("materiasAprobadas", JSON.stringify(aprobadas));
   }
 
@@ -27,10 +29,28 @@ document.addEventListener("DOMContentLoaded", () => {
     creditosAprobadosSpan.textContent = total;
   }
 
+  function desbloquearMaterias() {
+    materias.forEach(materia => {
+      const requisitos = materia.dataset.requiere?.split(" ") || [];
+      const cumplidos = requisitos.every(reqId => {
+        const reqMateria = document.getElementById(reqId);
+        return reqMateria && reqMateria.classList.contains("aprobada");
+      });
+
+      if (requisitos.length === 0 || cumplidos) {
+        materia.classList.remove("bloqueada");
+      } else {
+        materia.classList.add("bloqueada");
+      }
+    });
+  }
+
   materias.forEach(m => {
     m.addEventListener("click", () => {
+      if (m.classList.contains("bloqueada")) return;
       m.classList.toggle("aprobada");
       guardarEstado();
+      desbloquearMaterias();
       actualizarCreditos();
     });
   });
@@ -38,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   resetButton.addEventListener("click", () => {
     localStorage.removeItem("materiasAprobadas");
     materias.forEach(m => m.classList.remove("aprobada"));
+    desbloquearMaterias();
     actualizarCreditos();
   });
 
@@ -53,5 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (savedTema) body.setAttribute("data-tema", savedTema);
 
   cargarEstado();
+  desbloquearMaterias();
   actualizarCreditos();
 });
+
