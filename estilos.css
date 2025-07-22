@@ -149,4 +149,14 @@ body[data-tema='negro'] {
   color: var(--titulo);
   opacity: 0.8;
 }
+@media (max-width: 768px) {
+  .fila {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .semestre {
+    width: 90%;
+  }
+}
 
