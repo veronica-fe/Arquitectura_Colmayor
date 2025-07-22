@@ -8,6 +8,8 @@ body {
 }
 h1, h2.subtitle {
   text-align: center;
+  color: var(--titulo);
+  transition: color 0.3s ease;
 }
 #colores-tema {
   text-align: center;
